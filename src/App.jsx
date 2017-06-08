@@ -12,6 +12,7 @@ const mapI = R.addIndex(R.map);
 class App extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       currencies: [],
       currency: "USD",
