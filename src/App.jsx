@@ -3,6 +3,7 @@ import R from "ramda";
 import Mui from "muicss/react";
 import "muicss/dist/css/mui.css";
 import getSymbol from "currency-symbol-map";
+import {getTip, getTotal} from "tipsy";
 
 
 const mapI = R.addIndex(R.map);
@@ -60,8 +61,8 @@ class App extends Component {
 
   render() {
     const {bill, percentage, party, currencies, currency} = this.state;
-    const tip = (bill * (percentage / 100) / party);
-    const total = (bill + tip) / party;
+    const tip = getTip(bill, percentage, party);
+    const total = getTotal(bill, percentage, party);
 
     return (
       <Mui.Container fluid>
